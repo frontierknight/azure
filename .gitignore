@@ -1,0 +1,8 @@
+node_modules/
+*.log
+.DS_Store
+dist/
+*.tsbuildinfo
+CLAUDE.md
+# per-engagement runtime state (evidence chain / IOC ledger)
+.aegis.json
