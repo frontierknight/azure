@@ -1,31 +1,31 @@
 <div align="center">
 
-# AEGIS 🔵
+# Azure Knight 🔵
 
-**A self-contained blue-team / defensive-security agent for [pi](https://pi.dev).**
+**The blue-team / defensive-security agent of [Frontier Knight Labs](https://github.com/frontierknight).**
 
 *SOC + DFIR persona · 8-phase response chain · executes Kali-native tools · offline · built for Kali.*
 
-A [Frontier Knight Labs](https://github.com/frontierknight) product · red-team counterpart: [Wraith 🔴](https://github.com/frontierknight/wraith)
+Runs on [pi](https://pi.dev) · red-team counterpart: [Crimson Knight 🔴](https://github.com/frontierknight/crimson) · proving ground: [Knightfall](https://github.com/frontierknight)
 
 </div>
 
 ---
 
-Aegis is a defensive-security agent: it selects the right workflow from a bundled library of **370 defense skills** (carved from the [Anthropic Cybersecurity Skills](https://github.com/mukul975/Anthropic-Cybersecurity-Skills), Apache 2.0), checks the toolchain it needs, then **actually runs the Kali-native tools** (Volatility, YARA, Sigma, Zeek, Suricata, Splunk, …), reads the real output, and reasons forward — one phase at a time, at your pace. It runs as a pi extension and leaves plain `pi` untouched.
+Azure Knight is a defensive-security agent: it selects the right workflow from a bundled library of **370 defense skills** (from the [Anthropic Cybersecurity Skills](https://github.com/mukul975/Anthropic-Cybersecurity-Skills), Apache 2.0), checks the toolchain it needs, then **actually runs the Kali-native tools** (Volatility, YARA, Sigma, Zeek, Suricata, Splunk, …), reads the real output, and reasons forward — one phase at a time, at your pace. It runs as a pi extension and leaves plain `pi` untouched.
 
 ## Install
 
 Needs [pi](https://pi.dev) (Node ≥ 22) and a model configured in pi (`pi` once to sign in).
 
 ```bash
-git clone https://github.com/frontierknight/aegis ~/aegis
-cd ~/aegis && ./install.sh
+git clone https://github.com/frontierknight/azure ~/azure
+cd ~/azure && ./install.sh
 source ~/.zshrc
-aegis
+azure
 ```
 
-The installer sets up an isolated config, wires the `aegis` command, checks your Kali toolchain (prints `apt install` for anything missing), and drops an optional API-keys template at `~/.frontierknight/keys.env`. On Kali the defensive tools are mostly already there.
+The installer sets up an isolated config, wires the `azure` command, checks your Kali toolchain (prints `apt install` for anything missing), and drops an optional API-keys template at `~/.frontierknight/keys.env`. On Kali the defensive tools are mostly already there.
 
 ## How it works — one phase at a time, you set the pace
 
@@ -53,7 +53,7 @@ Nothing runs against a system until you confirm authorization. Each phase then *
 | `/evidence` · `/reset` | Show the full incident memory · clear it |
 | `/arsenal [kw]` · `/help` | Browse skills · how to use |
 
-Memory (scope, phase, evidence chain, IOC ledger) persists to `.aegis.json` in the working dir and survives restarts.
+Memory (scope, phase, evidence chain, IOC ledger) persists to `.azure.json` in the working dir and survives restarts.
 
 ## Rules of engagement
 

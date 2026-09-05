@@ -1,5 +1,5 @@
 /**
- * 🔵 AEGIS — autonomous blue-team / defensive-security agent (self-contained pi extension).
+ * 🔵 AZURE KNIGHT — autonomous blue-team / defensive-security agent (self-contained pi extension).
  *
  * This folder is ONE independent agent — no shared code with Wraith. Three files:
  *   index.ts       ← you are here: identity, incident memory, commands, wiring
@@ -16,25 +16,23 @@ import { SkillIndex, registerSkillTool, w, W_PRIMARY, SKILLS_PATH } from "./skil
 import { TOOLS, SYNONYMS } from "./tools";
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// Identity — AEGIS, blue team. 8-phase defense chain.
+// Identity — AZURE KNIGHT, blue team. 8-phase defense chain.
 // ═══════════════════════════════════════════════════════════════════════════════
 
 interface Phase { id: string; name: string; brief: string; order: string; probe: string; }
 
-const NAME = "AEGIS";
-const THEME = "aegis";
+const NAME = "AZURE KNIGHT";
+const THEME = "azure";
 const BANNER = [
-  "   █████  ███████  ██████  ██ ███████",
-  "  ██   ██ ██      ██       ██ ██     ",
-  "  ███████ █████   ██   ███ ██ ███████",
-  "  ██   ██ ██      ██    ██ ██      ██",
-  "  ██   ██ ███████  ██████  ██ ███████",
-  "  BLUE TEAM · 8-phase defense · /engage <host>",
+  "   🛡  A Z U R E   K N I G H T  🛡",
+  "  ─────────────────────────────────────────",
+  "  BLUE TEAM · defense · 8-phase response",
+  "  /engage <scope>",
 ];
 
 const PERSONA = `
 ═══════════════════════════════════════════════════════════════
-You are AEGIS, an autonomous blue-team / defensive-security agent.
+You are the AZURE KNIGHT, an autonomous blue-team / defensive-security agent of Frontier Knight Labs.
 
 [Identity]
 You are a senior SOC analyst & DFIR responder. You think like a defender:
@@ -102,7 +100,7 @@ const PHASES: Phase[] = [
 interface Evidence { phase: string; note: string; }
 interface State { target: string; phase: number; authorized: boolean; evidence: Evidence[]; iocs: string[]; }
 
-const STATE_FILE = join(process.cwd(), ".aegis.json");
+const STATE_FILE = join(process.cwd(), ".azure.json");
 
 function loadState(): State {
   try {
@@ -148,7 +146,7 @@ export default function (pi: ExtensionAPI) {
   const refreshStatus = (ctx: any) => {
     if (!ctx.hasUI) return;
     const phase = state.phase >= 0 ? `Phase ${state.phase + 1}/${PHASES.length} · ${PHASES[state.phase].name}` : "idle";
-    ctx.ui.setStatus("aegis", `▓ ${NAME} ▓ ${phase} · ${state.target || "no scope"}`);
+    ctx.ui.setStatus("azure", `▓ ${NAME} ▓ ${phase} · ${state.target || "no scope"}`);
   };
 
   const runPhase = (ctx: any) => {
@@ -169,7 +167,7 @@ export default function (pi: ExtensionAPI) {
     ctx.ui.setTheme?.(THEME);
     let i = 0;
     const reveal = () => {
-      ctx.ui.setWidget("aegis-banner", BANNER.slice(0, i));
+      ctx.ui.setWidget("azure-banner", BANNER.slice(0, i));
       if (i < BANNER.length) { i++; setTimeout(reveal, 70); return; }
       refreshStatus(ctx);
       ctx.ui.notify(

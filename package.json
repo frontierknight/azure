@@ -1,9 +1,9 @@
 {
-  "name": "aegis",
+  "name": "azure-knight",
   "version": "0.5.0",
-  "description": "Aegis 🔵 — a self-contained blue-team / defensive-security agent for pi. SOC + DFIR persona, 8-phase response chain, 8 defensive tools, 370 offline defense workflows (Sigma, YARA, Volatility, Zeek, Splunk, ...). Executes Kali-native tools. Part of Frontier Knight Labs.",
-  "keywords": ["pi-package","pi-extension","cybersecurity","blue-team","incident-response","threat-hunting","dfir","forensics","kali","mitre-attack"],
+  "description": "Azure Knight 🔵 — the blue-team / defensive-security agent of Frontier Knight Labs. Self-contained pi extension: SOC + DFIR persona, 8-phase response chain, 8 defensive tools, 370 offline defense workflows (Sigma, YARA, Volatility, Zeek, Splunk, ...). Executes Kali-native tools.",
+  "keywords": ["pi-package","pi-extension","cybersecurity","blue-team","incident-response","threat-hunting","dfir","kali","mitre-attack","frontier-knight-labs"],
   "license": "MIT",
-  "pi": { "extensions": ["./aegis"], "themes": ["./themes"] },
+  "pi": { "extensions": ["./azure"], "themes": ["./themes"] },
   "peerDependencies": { "@earendil-works/pi-coding-agent": "*", "@earendil-works/pi-ai": "*", "typebox": "*" }
 }

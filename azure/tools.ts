@@ -1,5 +1,5 @@
 /**
- * AEGIS tools — the blue team's defensive arsenal.
+ * AZURE KNIGHT tools — the blue team's defensive arsenal.
  *
  * 8 tools, each mapping structured params → weighted keywords for skill retrieval,
  * plus the blue synonym table. This product ships only blue skills (./skills), so
