@@ -62,3 +62,7 @@ Operate **only on systems you are authorized to defend**. A two-step `/engage` g
 ## License
 
 MIT (extension code). The bundled skills are Apache 2.0 by their authors.
+
+---
+
+**Get involved** — Frontier Knight Labs is an open, interest-driven effort (no funding, just the problem). Want to own a direction? RL folks especially welcome → [get involved](https://github.com/frontierknight).
